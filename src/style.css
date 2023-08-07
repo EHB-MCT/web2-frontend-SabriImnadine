@@ -1,54 +1,164 @@
-* {
-  box-sizing: border-box;
+
+body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
 }
 
 body {
+  font-family: Arial, sans-serif;
+  background-color: #1a202c; 
+  color: #e2e8f0; 
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.navbar {
+  background-color: #2d3748; 
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.navbar a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #eee;
+  color: #e2e8f0; 
+  padding: 14px 0;
+  text-decoration: none;
+  transition: background-color 0.3s; 
 }
 
-.container {
-  background-color: #8e44ad;
+.navbar a:hover {
+  background-color: #4a5568; 
+}
+
+
+.login-register-form,
+.create-challenge-form {
+  background-color: #2d3748; 
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
-}
-
-h1,
-label {
-  color: #fff;
-  font-family: 'Roboto Mono', monospace;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
   margin-bottom: 15px;
 }
 
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  border: 1px solid #4a5568; 
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #2d3748; 
+}
+
+input[type="text"],
 input[type="email"],
 input[type="password"] {
-  width: 100%;
-  padding: 8px;
+  flex: 1;
+  padding: 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
+  font-size: 16px;
+  background-color: #2d3748; 
+  color: #e2e8f0; 
 }
 
-.register-btn,
-.login-link a {
-  display: inline-block;
-  background-color: #fff;
-  color: #8e44ad;
+button.login-btn,
+button.register-btn,
+button.create-btn {
   padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+  background-color: #006a4e; 
+  color: #e2e8f0; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.register-btn:hover,
-.login-link a:hover {
-  background-color: #ddd;
+button.login-btn:hover,
+button.register-btn:hover,
+button.create-btn:hover {
+  background-color: #005540; 
 }
+
+
+.register-link {
+  margin-top: 20px; 
+  text-align: center;
+}
+
+.register-link a {
+  color: #4a5568; 
+}
+
+
+.login-header,
+.register-header,
+.create-challenge-header { 
+  text-align: center;
+  margin-bottom: 40px; 
+}
+
+.login-header h1,
+.register-header h1,
+.create-challenge-header h1 { 
+  font-size: 24px;
+  margin-bottom: 10px; 
+  margin-top: 60px; 
+}
+
+.login-header p,
+.register-header p,
+.create-challenge-header p { 
+  font-size: 16px; 
+  margin-bottom: 20px; 
+}
+
+.login-header a,
+.register-header a,
+.create-challenge-header a { 
+  text-decoration: none;
+  color: #4a5568;
+  font-size: 16px; 
+}
+
+.login-header a:hover,
+.register-header a:hover,
+.create-challenge-header a:hover { 
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .navbar {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .navbar a {
+    padding: 10px 0;
+  }
+}
+

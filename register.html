@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/src/style.css">
+  <script src="/src/register.js" defer></script>
   <title>Session 8 - Login/Register</title>
 </head>
-
 <body>
+  <div class="navbar">
+    <a href="/login.html">Login</a>
+    <a href="/register.html">Register</a>
+    <a href="/home.html">Home</a>
+    <a href="/create-challenge.html">Create New Challenge</a>
+    <a href="/challenges.html">My Challenges</a>
+  </div>
+  
   <div class="container">
-    <form id="registerForm">
-      <h1>Register</h1>
+    <div class="register-header">
+      <h1>Sign up for free</h1>
+      <p><a href="/login.html">Or sign in to your existing account</a></p>
+    </div>
+    <form id="registerForm" class="login-register-form">
       <div class="form-group">
-        <label for="registerUsername">Username</label>
-        <input type="text" id="registerUsername" required>
+        <label for="registerUsername">Name</label>
+        <div class="input-container">
+          <input type="text" id="registerUsername" required>
+        </div>
       </div>
       <div class="form-group">
         <label for="registerEmail">Email address</label>
-        <input type="email" id="registerEmail" required>
+        <div class="input-container">
+          <input type="email" id="registerEmail" required>
+        </div>
       </div>
       <div class="form-group">
         <label for="registerPassword">Password</label>
-        <input type="password" id="registerPassword" required>
+        <div class="input-container">
+          <input type="password" id="registerPassword" required>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="registerPassword2">Repeat password</label>
-        <input type="password" id="registerPassword2" required>
-      </div>
-      <button class="register-btn" type="submit">Create an account</button>
-      <div class="login-link">
-        <a href="/login.html">Return to login page</a>
-      </div>
+      <button class="register-btn" type="submit">Register</button>
     </form>
   </div>
-
-  <script src="/src/register.js" defer></script>
 </body>
-
 </html>
