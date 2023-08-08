@@ -20,10 +20,16 @@ function loginUser(e) {
   })
     .then(response => response.json())
     .then(data => {
-      if (data.message === 'succesvolle login ') {
-        alert('succesvolle login  !');
+      const loginMessage = document.getElementById('loginMessage');
+      const messageText = data.message.trim();
+
+      if (messageText === 'Succesvolle verbinding') {
+        loginMessage.textContent = 'Je bent succesvol ingelogd!';
+        loginMessage.classList.add('green');
+        // localStorage.setItem('userId', data.userId); // Assuming your response includes userId
       } else {
-        alert('Fout bij het verbinden : ' + data.message);
+        loginMessage.textContent = 'Fout bij het verbinden : ' + data.message;
+        loginMessage.classList.add('red');
       }
     })
     .catch(error => {
@@ -31,3 +37,4 @@ function loginUser(e) {
       alert('Fout bij het verbinden');
     });
 }
+

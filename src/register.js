@@ -22,10 +22,14 @@ function registerUser(e) {
   })
     .then(response => response.json())
     .then(data => {
-      if (data.message === 'Inschrijving voltooid') {
-        alert('Inschrijving voltooid !');
+      const registerMessage = document.getElementById('registerMessage');
+      if (data.message === 'succesvolle registratie') {
+        localStorage.setItem('userId', data.userId)
+        registerMessage.textContent = 'Je bent succesvol geregistreerd!';
+        registerMessage.classList.add('green');
       } else {
-        alert('Error bij inschrijving : ' + data.message);
+        registerMessage.textContent = 'Fout bij inschrijving : ' + data.message;
+        registerMessage.classList.add('red');
       }
     })
     .catch(error => {
@@ -33,4 +37,3 @@ function registerUser(e) {
       alert('Error bij inschrijving');
     });
 }
-
