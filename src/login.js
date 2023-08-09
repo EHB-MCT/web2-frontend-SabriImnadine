@@ -26,7 +26,6 @@ function loginUser(e) {
       if (messageText === 'Succesvolle verbinding') {
         loginMessage.textContent = 'Je bent succesvol ingelogd!';
         loginMessage.classList.add('green');
-        // localStorage.setItem('userId', data.userId); // Assuming your response includes userId
       } else {
         loginMessage.textContent = 'Fout bij het verbinden : ' + data.message;
         loginMessage.classList.add('red');
