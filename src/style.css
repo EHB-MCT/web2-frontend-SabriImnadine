@@ -83,7 +83,8 @@ input[type="password"] {
 
 button.login-btn,
 button.register-btn,
-button.create-btn {
+button.create-btn,
+button.delete-button {
   padding: 10px 20px;
   background-color: #006a4e; 
   color: #e2e8f0; 
@@ -94,7 +95,8 @@ button.create-btn {
 
 button.login-btn:hover,
 button.register-btn:hover,
-button.create-btn:hover {
+button.create-btn:hover,
+button.delete-button:hover {
   background-color: #005540; 
 }
 
@@ -126,7 +128,7 @@ button.create-btn:hover {
 
 .login-header p,
 .register-header p,
-.create-challenge-header p
+.create-challenge-header p,
 .my-challenges-header p { 
   font-size: 16px; 
   margin-bottom: 20px; 
@@ -134,7 +136,7 @@ button.create-btn:hover {
 
 .login-header a,
 .register-header a,
-.create-challenge-header a
+.create-challenge-header a,
 .my-challenges-header a { 
   text-decoration: none;
   color: #4a5568;
@@ -143,7 +145,8 @@ button.create-btn:hover {
 
 .login-header a:hover,
 .register-header a:hover,
-.create-challenge-header a:hover { 
+.create-challenge-header a:hover,
+.my-challenges-header a:hover { 
   text-decoration: underline;
 }
 
@@ -217,4 +220,3 @@ button.create-btn:hover {
 .delete-button:hover {
   background-color: #e74c3c; /* Kleur voor hover, vergelijkbaar met Register-knop */
 }
-

@@ -128,6 +128,7 @@ async function getMyChallenges(userId) {
 
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
+      deleteButton.classList.add('delete-button');
       deleteButton.addEventListener('click', () => {
         deleteChallenge(challenge.challengeId);
       });
