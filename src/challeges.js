@@ -92,14 +92,18 @@ async function createChallenge(event) {
           } = await response.json();
 
           if (response.ok) {
-              alert(`${message} Challenge ID: ${challengeId}`);
-              const currentChallengeIds = JSON.parse(localStorage.getItem('currentChallengeIds')) || [];
-              currentChallengeIds.push(challengeId);
-              localStorage.setItem('currentChallengeIds', JSON.stringify(currentChallengeIds));
-              document.getElementById('create-challenge-form').reset();
-              getAllChallenges();
+            const successMessage = document.getElementById('createChallengeMessage');
+            successMessage.textContent = `${message} Challenge ID: ${challengeId}`;
+            successMessage.classList.add('green');
+            const currentChallengeIds = JSON.parse(localStorage.getItem('currentChallengeIds')) || [];
+            currentChallengeIds.push(challengeId);
+            localStorage.setItem('currentChallengeIds', JSON.stringify(currentChallengeIds));
+            document.getElementById('create-challenge-form').reset();
+            getAllChallenges();
           } else {
-              alert(message);
+            const errorMessage = document.getElementById('createChallengeMessage');
+            errorMessage.textContent = message;
+            errorMessage.classList.add('red');
           }
       } else {
           alert('Error bij het fetchen van de Unplash API');

@@ -202,7 +202,8 @@ button.delete-button:hover {
 
 .challenge img {
   max-width: 100%;
-  height: auto;
+  height: 200px; /* Spécifiez la hauteur souhaitée en pixels */
+  object-fit: cover; /* Assure le remplissage de l'image tout en respectant les proportions */
   margin-top: 10px;
 }
 
@@ -219,4 +220,20 @@ button.delete-button:hover {
 
 .delete-button:hover {
   background-color: #e74c3c; /* Kleur voor hover, vergelijkbaar met Register-knop */
+}
+
+.create-challenge-message {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Green color for successful messages */
+.create-challenge-message.green {
+  color: #00b894;
+}
+
+/* Red color for error messages */
+.create-challenge-message.red {
+  color: #e74c3c;
 }
