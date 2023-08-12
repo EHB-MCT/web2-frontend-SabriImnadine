@@ -111,7 +111,8 @@ button.delete-button:hover {
 .register-header,
 .create-challenge-header,
 .my-challenges-header,
-.all-challenge-header { 
+.all-challenge-header,
+.play-challenge-header { 
   text-align: center;
   margin-bottom: 40px; 
 }
@@ -120,7 +121,8 @@ button.delete-button:hover {
 .register-header h1,
 .create-challenge-header h1,
 .my-challenges-header h1,
-.all-challenge-header h1 { 
+.all-challenge-header h1,
+.play-challenge-header h1 { 
   font-size: 24px;
   margin-bottom: 10px; 
   margin-top: 60px; 
@@ -130,7 +132,8 @@ button.delete-button:hover {
 .register-header p,
 .create-challenge-header p,
 .my-challenges-header p,
-.all-challenge-header { 
+.all-challenge-header p,
+.play-challenge-header p { 
   font-size: 16px; 
   margin-bottom: 20px; 
 }
@@ -139,7 +142,8 @@ button.delete-button:hover {
 .register-header a,
 .create-challenge-header a,
 .my-challenges-header a,
-.all-challenge-header a { 
+.all-challenge-header a,
+.play-challenge-header a { 
   text-decoration: none;
   color: #4a5568;
   font-size: 16px; 
@@ -149,7 +153,8 @@ button.delete-button:hover {
 .register-header a:hover,
 .create-challenge-header a:hover,
 .my-challenges-header a:hover,
-.all-challenge-header a:hover { 
+.all-challenge-header a:hover,
+.play-challenge-header a:hover { 
   text-decoration: underline;
 }
 

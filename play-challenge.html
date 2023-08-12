@@ -21,14 +21,24 @@
       <h1>Play Challenge</h1> 
     </div>
     
-    <div class="challenge-details" id="challenge-details">
-      <p id="challenge-description"></p>
-      <img id="challenge-image" alt="Challenge Picture">
-      <p id="challenge-dataset"></p>
-      <input type="text" id="result-input" placeholder="Enter your result">
-      <button id="submit-result" class="play-button">Submit Result</button>
-      <p id="result-message"></p>
-      <button id="back-button" class="play-button">Back to Home</button>
+    <div class="create-challenge-form">
+      <div class="form-group">
+        <p id="challenge-description" class="challenge-description"></p>
+        <img id="challenge-image" alt="Challenge Picture" class="challenge-image">
+        <p id="challenge-dataset" class="challenge-dataset"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="result-input">Submit:</label>
+        <div class="input-container">
+          <input type="text" id="result-input" placeholder="Enter your result" required>
+        </div>
+      </div>
+
+      <button id="submit-result" class="create-btn green-btn">Submit</button>
+      <p id="result-message" class="create-challenge-message"></p>
+
+      <button id="back-button" class="create-btn">Back</button>
     </div>
   </div>
 
