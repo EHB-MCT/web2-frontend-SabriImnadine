@@ -268,3 +268,26 @@ button.delete-button:hover {
   margin-top: 10px;
 }
 
+.play-challenge-page .create-challenge-form {
+  text-align: center;
+}
+
+.play-challenge-page .challenge-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.play-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.result-message.green {
+  color: #00b894;
+}
+
+/* Pour le message "Challenge failed" */
+.result-message.red {
+  color: #e74c3c;
+}

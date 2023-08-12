@@ -47,7 +47,7 @@ function createChallengeElement(challenge, showPlayButton) {
   if (showPlayButton) {
     const playButton = document.createElement('button');
     playButton.textContent = 'Play';
-    playButton.classList.add('delete-button'); // Reuse delete-button class for styling
+    playButton.classList.add('delete-button'); 
     playButton.addEventListener('click', () => {
     window.location.href = `/play-challenge.html?challengeId=${challenge.challengeId}`;
     });
@@ -106,7 +106,7 @@ async function createChallenge(event) {
 
           if (response.ok) {
             const successMessage = document.getElementById('createChallengeMessage');
-            successMessage.textContent = `${message}`;
+            successMessage.textContent = 'Challenge created successfully';
             successMessage.classList.add('green');
             const currentChallengeIds = JSON.parse(localStorage.getItem('currentChallengeIds')) || [];
             currentChallengeIds.push(challengeId);
@@ -115,7 +115,7 @@ async function createChallenge(event) {
             getAllChallenges();
           } else {
             const errorMessage = document.getElementById('createChallengeMessage');
-            errorMessage.textContent = message;
+            errorMessage.textContent = 'Challenge creation failed';
             errorMessage.classList.add('red');
           }
       } else {

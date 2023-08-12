@@ -31,15 +31,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                     const { message } = await resultResponse.json();
                     if (resultResponse.ok) {
-                      resultMessage.textContent = message;
+                        resultMessage.textContent = message;
+                        resultMessage.classList.remove('red');
+                        resultMessage.classList.add('green');
                     } else {
-                      resultMessage.textContent = 'Challenge failed';
+                        resultMessage.textContent = 'Challenge failed';
+                        resultMessage.classList.remove('green');
+                        resultMessage.classList.add('red');
                     }
-                  } catch (error) {
+                } catch (error) {
                     console.error('Error submitting result:', error);
                     alert('An error occurred while submitting the result');
-                  }
-                });
+                }
+            });
 
         } catch (error) {
             console.error('Error fetching challenge details:', error);
@@ -54,5 +58,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     backButton.addEventListener('click', () => {
         window.location.href = '/home.html';
     });
-
 });
