@@ -16,7 +16,7 @@ async function getAllChallenges() {
   }
 }
 
-function createChallengeElement(challenge) {
+function createChallengeElement(challenge, showPlayButton) {
   const challengeElement = document.createElement('div');
   challengeElement.classList.add('challenge');
 
@@ -36,11 +36,25 @@ function createChallengeElement(challenge) {
   const resultElement = document.createElement('p');
   resultElement.textContent = `Result: ${challenge.result}`;
 
+  
+
   challengeElement.appendChild(textElement);
   challengeElement.appendChild(descriptionElement);
   challengeElement.appendChild(datasetElement);
   challengeElement.appendChild(pictureElement);
   challengeElement.appendChild(resultElement);
+  
+  if (showPlayButton) {
+    const playButton = document.createElement('button');
+    playButton.textContent = 'Play';
+    playButton.classList.add('delete-button'); // Reuse delete-button class for styling
+    playButton.addEventListener('click', () => {
+      // Handle play button click action here
+      // For example: window.location.href = `/play-challenge.html?challengeId=${challenge.challengeId}`;
+    });
+  
+    challengeElement.appendChild(playButton);
+  }
 
   return challengeElement;
 }
@@ -183,7 +197,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     currentChallengeIds.map(async challengeId => {
       const response = await fetch(`http://localhost:1999/challenges/${challengeId}`);
       const challenge = await response.json();
-      const challengeElement = createChallengeElement(challenge);
+      const challengeElement = createChallengeElement(challenge, true);
       document.getElementById('challenges-list').appendChild(challengeElement);
     })
   );
