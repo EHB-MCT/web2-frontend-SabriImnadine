@@ -49,8 +49,7 @@ function createChallengeElement(challenge, showPlayButton) {
     playButton.textContent = 'Play';
     playButton.classList.add('delete-button'); // Reuse delete-button class for styling
     playButton.addEventListener('click', () => {
-      // Handle play button click action here
-      // For example: window.location.href = `/play-challenge.html?challengeId=${challenge.challengeId}`;
+    window.location.href = `/play-challenge.html?challengeId=${challenge.challengeId}`;
     });
   
     challengeElement.appendChild(playButton);

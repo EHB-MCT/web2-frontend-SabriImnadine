@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/style.css">
+  <title>Play Challenge</title>
+</head>
+<body>
+  <div class="navbar">
+    <a href="/login.html">Login</a>
+    <a href="/register.html">Register</a>
+    <a href="/home.html">Home</a>
+    <a href="/create-challenge.html">Create New Challenge</a>
+    <a href="/challenges.html">My Challenges</a>
+  </div>
+  
+  <div class="container">
+    <div class="play-challenge-header"> 
+      <h1>Play Challenge</h1> 
+    </div>
+    
+    <div class="challenge-details" id="challenge-details">
+      <p id="challenge-description"></p>
+      <img id="challenge-image" alt="Challenge Picture">
+      <p id="challenge-dataset"></p>
+      <input type="text" id="result-input" placeholder="Enter your result">
+      <button id="submit-result" class="play-button">Submit Result</button>
+      <p id="result-message"></p>
+      <button id="back-button" class="play-button">Back to Home</button>
+    </div>
+  </div>
+
+  <script src="/src/play-challenge.js"></script>
+</body>
+</html>
