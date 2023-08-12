@@ -93,7 +93,7 @@ async function createChallenge(event) {
 
           if (response.ok) {
             const successMessage = document.getElementById('createChallengeMessage');
-            successMessage.textContent = `${message} Challenge ID: ${challengeId}`;
+            successMessage.textContent = `${message}`;
             successMessage.classList.add('green');
             const currentChallengeIds = JSON.parse(localStorage.getItem('currentChallengeIds')) || [];
             currentChallengeIds.push(challengeId);
