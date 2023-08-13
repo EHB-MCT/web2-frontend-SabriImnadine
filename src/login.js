@@ -11,7 +11,7 @@ function loginUser(e) {
     password
   };
 
-  fetch('http://localhost:1999/login', {
+  fetch('https://web-2-sabri.onrender.com/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ function loginUser(e) {
     })
     .catch(error => {
       console.error('Fout bij het verbinden :', error);
-      alert('Fout bij het verbinden');
+      console.error('Fout bij het verbinden');
     });
 }
 

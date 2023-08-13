@@ -13,7 +13,7 @@ function registerUser(e) {
     password
   };
 
-  fetch('http://localhost:1999/register', {
+  fetch('https://web-2-sabri.onrender.com/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -34,6 +34,6 @@ function registerUser(e) {
     })
     .catch(error => {
       console.error('Error bij inschrijving :', error);
-      alert('Error bij inschrijving');
+      console.error('Error bij inschrijving');
     });
 }

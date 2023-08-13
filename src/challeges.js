@@ -1,6 +1,6 @@
 async function getAllChallenges() {
   try {
-    const response = await fetch('http://localhost:1999/all-challenges');
+    const response = await fetch('https://web-2-sabri.onrender.com/all-challenges');
     const { challenges } = await response.json();
 
     const challengesList = document.getElementById('challenges-list');
@@ -12,7 +12,7 @@ async function getAllChallenges() {
     });
   } catch (error) {
     console.error('Fout bij ophalen van uitdagingen:', error);
-    alert('Er is een fout opgetreden bij het ophalen van uitdagingen');
+    console.error('Er is een fout opgetreden bij het ophalen van uitdagingen');
   }
 }
 
@@ -47,9 +47,9 @@ function createChallengeElement(challenge, showPlayButton) {
   if (showPlayButton) {
     const playButton = document.createElement('button');
     playButton.textContent = 'Play';
-    playButton.classList.add('delete-button'); // Reuse delete-button class for styling
+    playButton.classList.add('delete-button'); 
     playButton.addEventListener('click', () => {
-    window.location.href = `/play-challenge.html?challengeId=${challenge.challengeId}`;
+    window.location.href = `play-challenge.html?challengeId=${challenge.challengeId}`;
     });
   
     challengeElement.appendChild(playButton);
@@ -91,7 +91,7 @@ async function createChallenge(event) {
               userId
           };
 
-          const response = await fetch('http://localhost:1999/newChallenges', {
+          const response = await fetch('https://web-2-sabri.onrender.com/newChallenges', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
@@ -119,11 +119,11 @@ async function createChallenge(event) {
             errorMessage.classList.add('red');
           }
       } else {
-          alert('Error bij het fetchen van de Unplash API');
+          console.error('Error bij het fetchen van de Unplash API');
       }
   } catch (error) {
       console.error('Een fout is opgetreden tijdens het aanmaken van een uitdaging:', error);
-      alert('Een fout is opgetreden tijdens het aanmaken van een uitdaging');
+      console.error('Een fout is opgetreden tijdens het aanmaken van een uitdaging');
   }
 }
 
@@ -131,7 +131,7 @@ async function getMyChallenges(userId) {
   try {
     console.log("UserId:", userId);
 
-    const response = await fetch(`http://localhost:1999/my-challenges?userId=${userId}`);
+    const response = await fetch(`https://web-2-sabri.onrender.com/my-challenges?userId=${userId}`);
     const { challenges } = await response.json();
 
     console.log("Challenges:", challenges);
@@ -155,20 +155,20 @@ async function getMyChallenges(userId) {
     });
   } catch (error) {
     console.error('Fout bij ophalen van gebruikersuitdagingen:', error);
-    alert('Er is een fout opgetreden bij het ophalen van gebruikersuitdagingen');
+    console.error('Er is een fout opgetreden bij het ophalen van gebruikersuitdagingen');
   }
 }
 
 async function deleteChallenge(challengeId) {
   try {
-    const response = await fetch(`http://localhost:1999/deleteChallenge/${challengeId}`, {
+    const response = await fetch(`https://web-2-sabri.onrender.com/deleteChallenge/${challengeId}`, {
       method: 'DELETE'
     });
 
     const { message } = await response.json();
 
     if (response.ok) {
-      alert(message);
+      console.error(message);
       const currentChallengeIds = JSON.parse(localStorage.getItem('currentChallengeIds')) || [];
       const updatedChallengeIds = currentChallengeIds.filter(id => id !== challengeId);
       localStorage.setItem('currentChallengeIds', JSON.stringify(updatedChallengeIds));
@@ -177,11 +177,11 @@ async function deleteChallenge(challengeId) {
         getMyChallenges(userId);
       }
     } else {
-      alert(message);
+      console.error(message);
     }
   } catch (error) {
     console.error('Fout bij verwijderen van uitdaging:', error);
-    alert('Er is een fout opgetreden bij het verwijderen van de uitdaging');
+    console.error('Er is een fout opgetreden bij het verwijderen van de uitdaging');
   }
 }
 
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const currentChallengeIds = JSON.parse(localStorage.getItem('currentChallengeIds')) || [];
   await Promise.all(
     currentChallengeIds.map(async challengeId => {
-      const response = await fetch(`http://localhost:1999/challenges/${challengeId}`);
+      const response = await fetch(`https://web-2-sabri.onrender.com/challenges/${challengeId}`);
       const challenge = await response.json();
       const challengeElement = createChallengeElement(challenge, true);
       document.getElementById('challenges-list').appendChild(challengeElement);

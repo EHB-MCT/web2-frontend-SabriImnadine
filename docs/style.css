@@ -287,7 +287,8 @@ button.delete-button:hover {
   color: #00b894;
 }
 
-/* Pour le message "Challenge failed" */
+
 .result-message.red {
   color: #e74c3c;
 }
+

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     if (challengeId) {
         try {
-            const response = await fetch(`http://localhost:1999/challenges/${challengeId}`);
+            const response = await fetch(`https://web-2-sabri.onrender.com/challenges/${challengeId}`);
             const challenge = await response.json();
 
             const challengeDescription = document.getElementById('challenge-description');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             submitResultButton.addEventListener('click', async () => {
                 const result = resultInput.value;
                 try {
-                    const resultResponse = await fetch(`http://localhost:1999/checkResult/${challengeId}`, {
+                    const resultResponse = await fetch(`https://web-2-sabri.onrender.com/checkResult/${challengeId}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     }
                   } catch (error) {
                     console.error('Error submitting result:', error);
-                    alert('An error occurred while submitting the result');
+                    con('An error occurred while submitting the result');
                   }
                 });
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const backButton = document.getElementById('back-button');
     backButton.addEventListener('click', () => {
-        window.location.href = '/home.html';
+        window.location.href = 'home.html';
     });
 
 });
