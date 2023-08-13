@@ -41,17 +41,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                     }
                   } catch (error) {
                     console.error('Error submitting result:', error);
-                    con('An error occurred while submitting the result');
+                    console.error('An error occurred while submitting the result');
                   }
                 });
 
         } catch (error) {
             console.error('Error fetching challenge details:', error);
-            alert('An error occurred while fetching challenge details');
+            console.error('An error occurred while fetching challenge details');
         }
     } else {
         console.error('Challenge ID not provided');
-        alert('Challenge ID not provided');
+        console.error('Challenge ID not provided');
     }
 
     const backButton = document.getElementById('back-button');
